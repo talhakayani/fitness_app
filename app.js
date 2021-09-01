@@ -12,7 +12,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 app.use('/', userRoute);
 app.use('/', exerciseRoute);
 app.listen(PORT, async () => {
-  console.log('Connecting Database...');
+  //console.log('Connecting Database...');
   await sequelize.authenticate();
-  console.log(`Server Running: http://localhost:${PORT}/api-docs`);
+  //console.log(`Server Running: http://localhost:${PORT}/api-docs`);
 });
