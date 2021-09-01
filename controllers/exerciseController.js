@@ -1,4 +1,5 @@
 const { Exercise } = require('../models');
+const { options } = require('../routes/userRoute');
 
 exports.addExercise = async (req, res) => {
   const { ex_name, no_of_repetitions, time } = req.body;
