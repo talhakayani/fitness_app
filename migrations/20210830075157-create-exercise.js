@@ -11,7 +11,6 @@ module.exports = {
       ex_name: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true,
       },
       no_of_repetitions: {
         type: DataTypes.INTEGER,

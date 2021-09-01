@@ -1,15 +1,12 @@
 const { Exercise } = require('../models');
-const { options } = require('../routes/userRoute');
 
 exports.addExercise = async (req, res) => {
   const { ex_name, no_of_repetitions, time } = req.body;
   await Exercise.create({ ex_name, no_of_repetitions, time })
-    .then(exercise => {
-      res.status(200).json({ mesage: 'Exercise Created', exercise });
-    })
-    .catch(err => {
-      res.status(400).json({ message: err.errors[0].message });
-    });
+    .then(exercise =>
+      res.status(200).json({ mesage: 'Exercise Created', exercise })
+    )
+    .catch(err => res.status(400).json({ message: err.mesage }));
 };
 
 exports.getAllExercises = async (req, res) => {
