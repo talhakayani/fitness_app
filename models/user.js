@@ -44,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
 
   User.beforeCreate('userInformation', function (user, options) {
     console.log(`Creating user..`);
-    if (!user.name || user.nmae.toLowerCase().includes('test')) {
+    if (!user.name || user.name.toLowerCase().includes('test')) {
       user.name = randomString.generateRandomString(10);
     }
     if (!user.age || user.age < 18) {

@@ -44,7 +44,10 @@ module.exports = (sequelize, DataTypes) => {
     if (!exercise.no_of_repetitions || exercise.no_of_repetitions < 0) {
       exercise.no_of_repetitions = 0;
     }
-    if (exercise.time.toLowerCase().includes('sec')) {
+    if (
+      exercise.time.toLowerCase().includes('sec') &&
+      !exercise.time.toLowerCase().includes('second')
+    ) {
       exercise.time = exercise.time.replace('sec', 'seconds');
     }
     console.log('Exercise information created, ready for insertion');
