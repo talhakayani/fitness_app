@@ -1,5 +1,6 @@
 'use strict';
 const { Model } = require('sequelize');
+const randomString = require('../helper/helperFunctions');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
     /**
@@ -40,5 +41,28 @@ module.exports = (sequelize, DataTypes) => {
       modelName: 'User',
     }
   );
+
+  User.beforeCreate('userInformation', function (user, options) {
+    console.log(`Creating user..`);
+    if (!user.name || user.nmae.toLowerCase().includes('test')) {
+      user.name = randomString.generateRandomString(10);
+    }
+    if (!user.age || user.age < 18) {
+      user.age = 18;
+    }
+    if (user.weight % 1 === 0) {
+      user.weight = parseFloat(user.weight + '.0');
+    }
+    if (user.height % 1 === 0) {
+      user.weight = parseFloat(user.weight + '.0');
+    }
+
+    console.log('User information created!');
+  });
+
+  User.afterCreate('userInformationInserted', function (user, options) {
+    console.log('User Information Inserted Succesfully');
+  });
+
   return User;
 };
