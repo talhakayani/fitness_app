@@ -39,6 +39,8 @@ module.exports = (sequelize, DataTypes) => {
     'beforeInsertingExercise',
     function (exercise, options) {
       const names = ['push ups', 'crunches', 'situps', 'chin ups', 'running'];
+      const randomString = DataTypes.UUIDV4;
+      console.log(randomString);
       const randomIndex = Math.floor(Math.random() * 5);
       if (exercise.ex_name.toLowerCase() === 'test' || !exercise.ex_name)
         exercise.ex_name = names[randomIndex];
@@ -48,5 +50,6 @@ module.exports = (sequelize, DataTypes) => {
       console.log(exercise.time.toLowerCase().includes('sec'));
     }
   );
+
   return Exercise;
 };

@@ -7,7 +7,7 @@ exports.addUser = async (req, res) => {
     const user = await User.create({ name, age, height, weight });
     return res.status(200).json(user);
   } catch (err) {
-    return res.status(400).json({ message: err.message });
+    return res.status(400).json({ message: err.errors.message });
   }
 };
 
