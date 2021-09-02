@@ -5,14 +5,14 @@ const { sequelize } = require('./models');
 const userRoute = require('./routes/userRoute');
 const exerciseRoute = require('./routes/exerciseRoute');
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000; //5432; //process.env.PORT || 5432;
 const app = express();
 app.use(express.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 app.use('/', userRoute);
 app.use('/', exerciseRoute);
 app.listen(PORT, async () => {
-  //console.log('Connecting Database...');
+  console.log('Connecting Database...');
   await sequelize.authenticate();
-  //console.log(`Server Running: http://localhost:${PORT}/api-docs`);
+  console.log(`Server Running: http://localhost:${PORT}/api-docs`);
 });

@@ -1,5 +1,5 @@
 {
-  "name": "fitness_applicatio",
+  "name": "fitness_application",
   "version": "1.0.0",
   "description": "A simple fitness API",
   "main": "app.js",
