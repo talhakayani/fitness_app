@@ -11,7 +11,10 @@ app.use(express.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDoc));
 app.use('/', userRoute);
 app.use('/', exerciseRoute);
-app.listen(PORT);
+
+app.listen(PORT, () => {
+  sequelize.authenticate();
+});
 // app.listen(PORT, async () => {
 //   console.log('Connecting Database...');
 //   await sequelize.authenticate();
