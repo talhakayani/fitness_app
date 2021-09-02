@@ -146,7 +146,6 @@
         "summary": "Update exercise on given id",
         "description": "Update information given by the end-user on specific id",
         "operationId": "updateExerciseById",
-        "consumes": ["application/json"],
         "produces": ["application/json"],
         "parameters": [
           {
@@ -329,7 +328,6 @@
         "summary": "Update user on given id",
         "description": "Update information given by the end-user on specific id",
         "operationId": "updateUserById",
-        "consumes": ["application/json"],
         "produces": ["application/json"],
         "parameters": [
           {
