@@ -16,7 +16,7 @@
   "production": {
     "username": "ufuafdulfrcbke",
     "password": "e77f78d08107079b7b39db847f642f887ac32250f7803494a99615bb8d6b2c1c",
-    "database": "d302ad3aqcdcvd",
+    "database": "postgres://ufuafdulfrcbke:e77f78d08107079b7b39db847f642f887ac32250f7803494a99615bb8d6b2c1c@ec2-18-215-44-132.compute-1.amazonaws.com:5432/d302ad3aqcdcvd",
     "host": "ec2-18-215-44-132.compute-1.amazonaws.com",
     "dialect": "postgres"
   }
