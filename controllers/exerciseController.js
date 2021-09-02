@@ -63,7 +63,7 @@ exports.deleteExerciseById = async (req, res) => {
   await Exercise.destroy(query)
     .then(count => {
       if (count !== 0) res.status(200).json({ message: 'User deleted', count });
-      else res.status(400).json({ message: 'No user found' });
+      else res.status(400).json({ message: 'No Exercise found' });
     })
     .catch(err => res.status(400).json({ message: err.mesage }));
 };
